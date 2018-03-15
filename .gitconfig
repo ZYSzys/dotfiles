@@ -1,0 +1,10 @@
+[user]
+	name = ZYSzys
+	email = 17367077526@163.com
+[core]
+	excludesfile = /Users/zyszys/.gitignore_global
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
