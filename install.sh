@@ -33,7 +33,9 @@ brew cask install near-lock
 
 # npm
 npm install -g fkill-cli
+npm install -g gtop
 npm install -g zys-trans
 
-# pip
+# gem
+gen install lolcat
 
