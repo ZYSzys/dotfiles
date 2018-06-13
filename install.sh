@@ -37,5 +37,5 @@ npm install -g gtop
 npm install -g zys-trans
 
 # gem
-gen install lolcat
+gem install lolcat
 
