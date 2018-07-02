@@ -1,0 +1,3 @@
+[submodule "zys-zsh-theme"]
+	path = zys-zsh-theme
+	url = ../zys-zsh-theme.git
