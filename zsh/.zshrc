@@ -60,6 +60,8 @@ ZSH_THEME="zys"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,12 +98,27 @@ source $ZSH/oh-my-zsh.sh
 alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/Users/zyszys/apache-maven-3.5.3/bin:/Users/zyszys/go/bin:/usr/local/opt/python/libexec/bin:/usr/local/opt/sqlite/bin:$PATH"
 eval $(thefuck --alias)
+
 alias c="clang++"
+alias cat="ccat"
+alias up="gaa && gcmsg 'fix :bug:' && gp"
 alias py="python"
+
+alias n='/usr/local/bin/npm'
+alias no='/usr/local/bin/node'
+alias ni='npm install'
+alias nis='npm install --save'
+alias nid='npm install --save-dev'
+alias nig='npm install -g'
+alias nd='npm docs'
+alias nv='npm version'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 archey -c
+
+export NVM_DIR="/Users/zyszys/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
