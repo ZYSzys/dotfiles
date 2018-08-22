@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/zyszys/.oh-my-zsh
@@ -95,25 +95,39 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+alias s="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-export PATH="/Users/zyszys/apache-maven-3.5.3/bin:/Users/zyszys/go/bin:/usr/local/opt/python/libexec/bin:/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/Users/zyszys/apache-maven-3.5.3/bin:/Users/zyszys/go/bin:/usr/local/opt/sqlite/bin:$PATH"
 eval $(thefuck --alias)
 
 alias c="clang++"
 alias cat="ccat"
 alias up="gaa && gcmsg 'fix :bug:' && gp"
-alias py="python"
+alias python="/usr/bin/python"
 
 alias n='/usr/local/bin/npm'
 alias no='/usr/local/bin/node'
 alias ni='npm install'
+alias nci='npm ci'
 alias nis='npm install --save'
 alias nid='npm install --save-dev'
 alias nig='npm install -g'
+alias nrb='npm run build'
+alias nrd='npm run dev'
 alias nd='npm docs'
 alias nv='npm version'
+alias nr='npm run'
+alias ns='npm search'
+alias nu='npm uninstall'
+alias nug='npm uninstall -g'
+alias np='npm publish'
+alias nls='npm list -g --depth 0'
+alias nrs='npm start'
+alias nt='npm test'
+alias ns='npm search'
+
+alias rn='rm -rf node_modules'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -122,3 +136,9 @@ archey -c
 
 export NVM_DIR="/Users/zyszys/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by travis gem
+[ -f /Users/zyszys/.travis/travis.sh ] && source /Users/zyszys/.travis/travis.sh
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
