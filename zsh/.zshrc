@@ -7,8 +7,8 @@ export ZSH=/Users/zyszys/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="zys"
-
+ZSH_THEME="spaceship" # "zys"
+SPACESHIP_TIME_SHOW="true"
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -103,8 +103,15 @@ eval $(thefuck --alias)
 
 alias c="clang++"
 alias cat="ccat"
-alias up="gaa && gcmsg 'fix :bug:' && gp"
-alias python="/usr/bin/python"
+alias glag="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias glu="git pull upstream master -f"
+alias gpo="git push origin"
+alias grh="git reset --hard"
+alias grs="git reset --soft"
+alias up="gaa && gcmsg 'fixup!' && gp -f"
+
+alias gm=$HOME/Projects/v8/v8/tools/dev/gm.py
+alias v8gen=$HOME/Projects/v8/v8/tools/dev/v8gen.py
 
 alias n='/usr/local/bin/npm'
 alias no='/usr/local/bin/node'
@@ -121,24 +128,36 @@ alias nr='npm run'
 alias ns='npm search'
 alias nu='npm uninstall'
 alias nug='npm uninstall -g'
-alias np='npm publish'
 alias nls='npm list -g --depth 0'
 alias nrs='npm start'
 alias nt='npm test'
 alias ns='npm search'
+alias nrl='npm run lint'
 
+alias rf='rm -rf'
 alias rn='rm -rf node_modules'
+
+alias y='/usr/local/bin/yarn'
+alias yb='yarn build'
+alias yd='yarn dev'
+alias ygl='yarn global list'
+alias ys='yarn start'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-archey -c
+export GPG_TTY=$(tty)
 
 export NVM_DIR="/Users/zyszys/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# added by travis gem
-[ -f /Users/zyszys/.travis/travis.sh ] && source /Users/zyszys/.travis/travis.sh
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=/Users/zyszys/.deno/bin:$PATH
+export PATH=$PATH:$HOME/Projects/depot_tools
+HOMEBREW_GITHUB_API_TOKEN=bee9101e242e17f8cda26329cc0ec994d06d7af4
