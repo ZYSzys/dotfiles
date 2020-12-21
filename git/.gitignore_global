@@ -1,2 +1,17 @@
 .DS_Store
 */.DS_Store
+
+# node-core-utils configuration file
+.ncurc
+# node-core-utils working directory
+.ncu
+
+zys-test
+node-master
+node-pr-*
+compare-pr-*
+
+# */**/app.json
+
+src/app.json
+bootstrap

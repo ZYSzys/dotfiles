@@ -1,33 +1,40 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/zyszys/.oh-my-zsh
+export ZSH="/Users/zhangyongsheng/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship" # "zys"
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="spaceship"
 SPACESHIP_TIME_SHOW="true"
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# ZSH_DISABLE_COMPFIX="true"
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -48,13 +55,17 @@ SPACESHIP_TIME_SHOW="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -83,9 +94,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -94,21 +102,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias s="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+# export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-export PATH="/Users/zyszys/apache-maven-3.5.3/bin:/Users/zyszys/go/bin:/usr/local/opt/sqlite/bin:$PATH"
-eval $(thefuck --alias)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias c="clang++"
 alias cat="ccat"
+
+alias gdm="git diff master"
+alias gfd="git fetch --depth"
 alias glag="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias glu="git pull upstream master -f"
+alias glu="git pull upstream $(git_main_branch) -f"
 alias gpo="git push origin"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
-alias up="gaa && gcmsg 'fixup!' && gp -f"
+alias up="gaa && gcmsg 'fix: cleanup!' && gp -f"
+alias upf="gaa && gcmsg 'fix: cleanup!' --no-verify && gp -f"
 
 alias gm=$HOME/Projects/v8/v8/tools/dev/gm.py
 alias v8gen=$HOME/Projects/v8/v8/tools/dev/v8gen.py
@@ -137,27 +150,21 @@ alias nrl='npm run lint'
 alias rf='rm -rf'
 alias rn='rm -rf node_modules'
 
+alias scrmup="gaa && gcmsg 'chore(pc-frontend): [behavior] fixup!' && gp -f"
+alias scrmupf="gaa && gcmsg 'chore(pc-frontend): [behavior] fixup!' --no-verify && gp -f"
+
 alias y='/usr/local/bin/yarn'
 alias yb='yarn build'
 alias yd='yarn dev'
 alias ygl='yarn global list'
 alias ys='yarn start'
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export GPG_TTY=$(tty)
+# 有赞npm镜像源
+alias ynpm="npm --registry=http://registry.npm.qima-inc.com"
 
-export NVM_DIR="/Users/zyszys/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# 有赞yarn镜像源
+alias yyarn="yarn --registry=http://registry.npm.qima-inc.com"
 
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home"
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-# export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=/Users/zyszys/.deno/bin:$PATH
-export PATH=$PATH:$HOME/Projects/depot_tools
-HOMEBREW_GITHUB_API_TOKEN=bee9101e242e17f8cda26329cc0ec994d06d7af4
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/mozjpeg/bin:$PATH"
+function gi() { curl -sLw n https://www.gitignore.io/api/$@ ;}

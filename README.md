@@ -7,8 +7,10 @@ My simle personal dotfiles.
 
 ### Development
 - Xcode
-- Sublime Text
-- Intellij Idea
+- Visual Studio Code
+- Kap
+- R
+- IINA
 
 ...
 

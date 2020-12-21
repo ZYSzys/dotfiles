@@ -1,10 +1,31 @@
+# This is Git's per-user configuration file.
 [user]
+# Please adapt and uncomment the following lines:
 	name = ZYSzys
-	email = 17367077526@163.com
+	email = zyszys98@gmail.com
 [core]
-	excludesfile = /Users/zyszys/.gitignore_global
+	excludesfile = /Users/zhangyongsheng/.gitignore_global
+	# pager = delta
+[push]
+	default = current
+[color]
+	ui = true
+[http]
+	proxy = http://127.0.0.1:1087
+	postBuffer = 524288000
+[https]
+	proxy = https://127.0.0.1:1087
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+# [delta]
+# 	plus-color = "#012800"
+# 	minus-color = "#340001"
+# 	syntax-theme = Monokai Extended
+# 	line-numbers = true
+# 	side-by-side = true
+
+# [interactive]
+#   diffFilter = delta --color-only
