@@ -116,7 +116,6 @@ alias cat="ccat"
 alias gdm="git diff master"
 alias gfd="git fetch --depth"
 alias glag="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-alias glu="git pull upstream $(git_main_branch) -f"
 alias gpo="git push origin"
 alias grh="git reset --hard"
 alias grs="git reset --soft"
@@ -166,5 +165,5 @@ alias ynpm="npm --registry=http://registry.npm.qima-inc.com"
 alias yyarn="yarn --registry=http://registry.npm.qima-inc.com"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/mozjpeg/bin:$PATH"
+export PATH="/Users/zhangyongsheng/Library/Python/3.8/bin:/usr/local/opt/mozjpeg/bin:$PATH"
 function gi() { curl -sLw n https://www.gitignore.io/api/$@ ;}
